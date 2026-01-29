@@ -59,4 +59,15 @@ class Account extends Model
     {
         return $this->hasMany(Transaction::class);
     }
+
+    /**
+     * Get the last payment date for the account
+     */
+    public function lastPaymentDate()
+    {
+        return $this->transactions()
+            ->where('type', 'payment')
+            ->latest('transaction_date')
+            ->value('transaction_date');
+    }
 }

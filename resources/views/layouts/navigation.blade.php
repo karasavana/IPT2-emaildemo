@@ -24,6 +24,10 @@
                     <x-nav-link :href="route('transactions.index')" :active="request()->routeIs('transactions.*')">
                         {{ __('Transactions') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('soa.index')" :active="request()->routeIs('soa.*')">
+                        {{ __('Soa') }}
+                    </x-responsive-nav-link>
+
                 </div>
             </div>
 
